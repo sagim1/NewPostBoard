@@ -1,0 +1,221 @@
+ECLIPSE ANDROID PROJECT IMPORT SUMMARY
+======================================
+
+Ignored Files:
+--------------
+The following files were *not* copied into the new Gradle project; you
+should evaluate whether these are still needed in your project and if
+so manually move them:
+
+* doc/
+* doc/allclasses-frame.html
+* doc/allclasses-noframe.html
+* doc/com/
+* doc/com/example/
+* doc/com/example/imageshacksdk/
+* doc/com/example/imageshacksdk/BuildConfig.html
+* doc/com/example/imageshacksdk/R.attr.html
+* doc/com/example/imageshacksdk/R.drawable.html
+* doc/com/example/imageshacksdk/R.html
+* doc/com/example/imageshacksdk/R.string.html
+* doc/com/example/imageshacksdk/R.style.html
+* doc/com/example/imageshacksdk/class-use/
+* doc/com/example/imageshacksdk/class-use/BuildConfig.html
+* doc/com/example/imageshacksdk/class-use/R.attr.html
+* doc/com/example/imageshacksdk/class-use/R.drawable.html
+* doc/com/example/imageshacksdk/class-use/R.html
+* doc/com/example/imageshacksdk/class-use/R.string.html
+* doc/com/example/imageshacksdk/class-use/R.style.html
+* doc/com/example/imageshacksdk/package-frame.html
+* doc/com/example/imageshacksdk/package-summary.html
+* doc/com/example/imageshacksdk/package-tree.html
+* doc/com/example/imageshacksdk/package-use.html
+* doc/com/imageshack/
+* doc/com/imageshack/client/
+* doc/com/imageshack/client/ActivitiesClient.html
+* doc/com/imageshack/client/AlbumsClient.html
+* doc/com/imageshack/client/AuthClient.html
+* doc/com/imageshack/client/CommentsClient.html
+* doc/com/imageshack/client/ImageShackAbstractClient.html
+* doc/com/imageshack/client/ImageShackClient.html
+* doc/com/imageshack/client/ImagesClient.html
+* doc/com/imageshack/client/UserClient.html
+* doc/com/imageshack/client/class-use/
+* doc/com/imageshack/client/class-use/ActivitiesClient.html
+* doc/com/imageshack/client/class-use/AlbumsClient.html
+* doc/com/imageshack/client/class-use/AuthClient.html
+* doc/com/imageshack/client/class-use/CommentsClient.html
+* doc/com/imageshack/client/class-use/ImageShackAbstractClient.html
+* doc/com/imageshack/client/class-use/ImageShackClient.html
+* doc/com/imageshack/client/class-use/ImagesClient.html
+* doc/com/imageshack/client/class-use/UserClient.html
+* doc/com/imageshack/client/package-frame.html
+* doc/com/imageshack/client/package-summary.html
+* doc/com/imageshack/client/package-tree.html
+* doc/com/imageshack/client/package-use.html
+* doc/com/imageshack/constant/
+* doc/com/imageshack/constant/Const.html
+* doc/com/imageshack/constant/class-use/
+* doc/com/imageshack/constant/class-use/Const.html
+* doc/com/imageshack/constant/package-frame.html
+* doc/com/imageshack/constant/package-summary.html
+* doc/com/imageshack/constant/package-tree.html
+* doc/com/imageshack/constant/package-use.html
+* doc/com/imageshack/listener/
+* doc/com/imageshack/listener/ResponseListener.html
+* doc/com/imageshack/listener/class-use/
+* doc/com/imageshack/listener/class-use/ResponseListener.html
+* doc/com/imageshack/listener/package-frame.html
+* doc/com/imageshack/listener/package-summary.html
+* doc/com/imageshack/listener/package-tree.html
+* doc/com/imageshack/listener/package-use.html
+* doc/com/imageshack/model/
+* doc/com/imageshack/model/ActivitiesCountModel.html
+* doc/com/imageshack/model/ActivitiesModel.html
+* doc/com/imageshack/model/ActivityModel.html
+* doc/com/imageshack/model/AlbumModel.html
+* doc/com/imageshack/model/AlbumsModel.html
+* doc/com/imageshack/model/AuthModel.html
+* doc/com/imageshack/model/BasicImageModel.html
+* doc/com/imageshack/model/CommentModel.html
+* doc/com/imageshack/model/CommentsModel.html
+* doc/com/imageshack/model/ImageModel.html
+* doc/com/imageshack/model/ImageShackModel.html
+* doc/com/imageshack/model/ImagesModel.html
+* doc/com/imageshack/model/MiniImageModel.html
+* doc/com/imageshack/model/SimpleAlbumModel.html
+* doc/com/imageshack/model/SimpleImageModel.html
+* doc/com/imageshack/model/SimpleModel.html
+* doc/com/imageshack/model/SimpleUserModel.html
+* doc/com/imageshack/model/UploadModel.html
+* doc/com/imageshack/model/UserModel.html
+* doc/com/imageshack/model/UserSettingsModel.html
+* doc/com/imageshack/model/class-use/
+* doc/com/imageshack/model/class-use/ActivitiesCountModel.html
+* doc/com/imageshack/model/class-use/ActivitiesModel.html
+* doc/com/imageshack/model/class-use/ActivityModel.html
+* doc/com/imageshack/model/class-use/AlbumModel.html
+* doc/com/imageshack/model/class-use/AlbumsModel.html
+* doc/com/imageshack/model/class-use/AuthModel.html
+* doc/com/imageshack/model/class-use/BasicImageModel.html
+* doc/com/imageshack/model/class-use/CommentModel.html
+* doc/com/imageshack/model/class-use/CommentsModel.html
+* doc/com/imageshack/model/class-use/ImageModel.html
+* doc/com/imageshack/model/class-use/ImageShackModel.html
+* doc/com/imageshack/model/class-use/ImagesModel.html
+* doc/com/imageshack/model/class-use/MiniImageModel.html
+* doc/com/imageshack/model/class-use/SimpleAlbumModel.html
+* doc/com/imageshack/model/class-use/SimpleImageModel.html
+* doc/com/imageshack/model/class-use/SimpleModel.html
+* doc/com/imageshack/model/class-use/SimpleUserModel.html
+* doc/com/imageshack/model/class-use/UploadModel.html
+* doc/com/imageshack/model/class-use/UserModel.html
+* doc/com/imageshack/model/class-use/UserSettingsModel.html
+* doc/com/imageshack/model/package-frame.html
+* doc/com/imageshack/model/package-summary.html
+* doc/com/imageshack/model/package-tree.html
+* doc/com/imageshack/model/package-use.html
+* doc/com/imageshack/utility/
+* doc/com/imageshack/utility/ActivitiesJsonParser.html
+* doc/com/imageshack/utility/AlbumsJsonParser.html
+* doc/com/imageshack/utility/AuthJsonParser.html
+* doc/com/imageshack/utility/CommentsJsonParser.html
+* doc/com/imageshack/utility/ImagesJsonParser.html
+* doc/com/imageshack/utility/SimpleResponseJsonParser.html
+* doc/com/imageshack/utility/UserJsonParser.html
+* doc/com/imageshack/utility/class-use/
+* doc/com/imageshack/utility/class-use/ActivitiesJsonParser.html
+* doc/com/imageshack/utility/class-use/AlbumsJsonParser.html
+* doc/com/imageshack/utility/class-use/AuthJsonParser.html
+* doc/com/imageshack/utility/class-use/CommentsJsonParser.html
+* doc/com/imageshack/utility/class-use/ImagesJsonParser.html
+* doc/com/imageshack/utility/class-use/SimpleResponseJsonParser.html
+* doc/com/imageshack/utility/class-use/UserJsonParser.html
+* doc/com/imageshack/utility/package-frame.html
+* doc/com/imageshack/utility/package-summary.html
+* doc/com/imageshack/utility/package-tree.html
+* doc/com/imageshack/utility/package-use.html
+* doc/constant-values.html
+* doc/deprecated-list.html
+* doc/help-doc.html
+* doc/index-files/
+* doc/index-files/index-1.html
+* doc/index-files/index-10.html
+* doc/index-files/index-11.html
+* doc/index-files/index-12.html
+* doc/index-files/index-13.html
+* doc/index-files/index-14.html
+* doc/index-files/index-15.html
+* doc/index-files/index-16.html
+* doc/index-files/index-17.html
+* doc/index-files/index-18.html
+* doc/index-files/index-19.html
+* doc/index-files/index-2.html
+* doc/index-files/index-20.html
+* doc/index-files/index-21.html
+* doc/index-files/index-3.html
+* doc/index-files/index-4.html
+* doc/index-files/index-5.html
+* doc/index-files/index-6.html
+* doc/index-files/index-7.html
+* doc/index-files/index-8.html
+* doc/index-files/index-9.html
+* doc/index.html
+* doc/overview-frame.html
+* doc/overview-summary.html
+* doc/overview-tree.html
+* doc/package-list
+* doc/resources/
+* doc/resources/inherit.gif
+* doc/stylesheet.css
+
+Replaced Jars with Dependencies:
+--------------------------------
+The importer recognized the following .jar files as third party
+libraries and replaced them with Gradle dependencies instead. This has
+the advantage that more explicit version information is known, and the
+libraries can be updated automatically. However, it is possible that
+the .jar file in your project was of an older version than the
+dependency we picked, which could render the project not compileable.
+You can disable the jar replacement in the import wizard and try again:
+
+android-support-v4.jar => com.android.support:support-v4:18.+
+
+Moved Files:
+------------
+Android Gradle projects use a different directory structure than ADT
+Eclipse projects. Here's how the projects were restructured:
+
+* AndroidManifest.xml => imageShackSDK/src/main/AndroidManifest.xml
+* libs/android-async-http-1.4.4.jar => imageShackSDK/libs/android-async-http-1.4.4.jar
+* res/ => imageShackSDK/src/main/res/
+* src/ => imageShackSDK/src/main/java/
+
+Missing Android Support Repository:
+-----------------------------------
+Some useful libraries, such as the Android Support Library, are
+installed from a special Maven repository, which should be installed
+via the SDK manager.
+
+It looks like this library is missing from your SDK installation at:
+null
+
+To install it, open the SDK manager, and in the Extras category,
+select "Android Support Repository". You may also want to install the
+"Google Repository" if you want to use libraries like Google Play
+Services.
+
+Next Steps:
+-----------
+You can now build the project. The Gradle project needs network
+connectivity to download dependencies.
+
+Bugs:
+-----
+If for some reason your project does not build, and you determine that
+it is due to a bug or limitation of the Eclipse to Gradle importer,
+please file a bug at http://b.android.com with category
+Component-Tools.
+
+(This import summary is for your information only, and can be deleted
+after import once you are satisfied with the results.)
