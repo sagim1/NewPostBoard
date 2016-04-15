@@ -1,2 +1,2 @@
-include ':app', ':backendless'
+include ':App', ':backendless'
 include ':imageShackSDK'
