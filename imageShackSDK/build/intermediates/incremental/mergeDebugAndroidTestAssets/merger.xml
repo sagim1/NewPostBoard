@@ -1,2 +1,2 @@
 <?xml version="1.0" encoding="utf-8"?>
-<merger version="3"><dataSet config="debug"><source path="C:\Users\Ashok\Desktop\Manjusha\Postboard\imageShackSDK\build\intermediates\bundles\debug\assets"/></dataSet><dataSet config="main"><source path="C:\Users\Ashok\Desktop\Manjusha\Postboard\imageShackSDK\src\androidTest\assets"/></dataSet></merger>
+<merger version="3"><dataSet config="debug"><source path="/Users/michaelscalera/Desktop/classes/spring2016/mobileComputing/project/NewPostBoard/imageShackSDK/build/intermediates/bundles/debug/assets"/></dataSet><dataSet config="main"><source path="/Users/michaelscalera/Desktop/classes/spring2016/mobileComputing/project/NewPostBoard/imageShackSDK/src/androidTest/assets"/></dataSet></merger>

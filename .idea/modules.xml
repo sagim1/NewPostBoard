@@ -2,8 +2,8 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/App/App.iml" filepath="$PROJECT_DIR$/App/App.iml" />
-      <module fileurl="file://$PROJECT_DIR$/Postboard.iml" filepath="$PROJECT_DIR$/Postboard.iml" />
+      <module fileurl="file://$PROJECT_DIR$/app/App.iml" filepath="$PROJECT_DIR$/app/App.iml" />
+      <module fileurl="file://$PROJECT_DIR$/NewPostBoard.iml" filepath="$PROJECT_DIR$/NewPostBoard.iml" />
       <module fileurl="file://$PROJECT_DIR$/backendless/backendless.iml" filepath="$PROJECT_DIR$/backendless/backendless.iml" />
       <module fileurl="file://$PROJECT_DIR$/imageShackSDK/imageShackSDK.iml" filepath="$PROJECT_DIR$/imageShackSDK/imageShackSDK.iml" />
     </modules>
