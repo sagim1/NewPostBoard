@@ -3,67 +3,104 @@ package com.myproject.postboard;
 import android.app.AlertDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
-import android.graphics.Bitmap;
-import android.graphics.BitmapFactory;
-import android.media.Image;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.util.Log;
+import android.support.v7.app.AppCompatActivity;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
-import android.widget.ImageView;
+import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ListView;
 import android.widget.Toast;
 
+import com.firebase.client.ChildEventListener;
 import com.firebase.client.DataSnapshot;
 import com.firebase.client.Firebase;
 import com.firebase.client.FirebaseError;
-import com.firebase.client.ValueEventListener;
+import com.firebase.client.Query;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends AppCompatActivity implements AdapterView.OnItemClickListener {
+
 
     private ListView listView1;
     private Firebase firebase;
     private List<Event> eventList;
+    private List<String> eventImageList;
+    private String eventName;
+    private String eventDay;
+    private String eventTime;
+    private String eventPlace;
+    private String eventBy;
+    private String eventImage;
+    private String eventId;
+    private String going;
+    private String notGoing;
+    private Intent intent;
+    private Query query;
+    private MyAdapter adapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         Firebase.setAndroidContext(this);
         setContentView(R.layout.activity_main);
-        Intent intent=new Intent(MainActivity.this, AddEventActivity.class);
+        //Intent intent=new Intent(MainActivity.this, AddEventActivity.class);
         //startActivity(intent);
         init();
     }
 
-    public void init()
-    {
-        listView1=(ListView)findViewById(R.id.listView1);
-        eventList=new ArrayList<Event>();
-        firebase = new Firebase("https://postboard.firebaseio.com");
-        firebase.addValueEventListener(new ValueEventListener() {
-            @Override
-            public void onDataChange(DataSnapshot dataSnapshot) {
-                for (DataSnapshot dataSnapshot1 : dataSnapshot.getChildren()) {
-                    Event event = dataSnapshot1.getValue(Event.class);
-                    eventList.add(event);
-                }
-                ImageView imageView=(ImageView)findViewById(R.id.imageView1);
-                byte[] image=eventList.get(0).getEventImage().getBytes();
-                Img.bitmap2=eventList.get(0).getEventImage();
+    public void init() {
+        listView1 = (ListView) findViewById(R.id.listView1);
+        listView1.setOnItemClickListener(this);
+        eventImageList = new ArrayList<>();
+        getAllEvents();// to show the main page with all of our events as soon as the app is opened
 
-                Bitmap bitmap= BitmapFactory.decodeByteArray(image, 0, image.length);
-                imageView.setImageBitmap(bitmap);
-                Log.i("IMG", eventList.get(0).getEventImage());
-                //listView1.setAdapter(new MyAdapter(MainActivity.this, R.id.imageView1, eventList));
-                if((Img.bitmap1).equals(Img.bitmap2))
-                    Toast.makeText(MainActivity.this, "Equal", Toast.LENGTH_SHORT).show();
-                else
-                    Toast.makeText(MainActivity.this, "Not Equal", Toast.LENGTH_SHORT).show();
+    }
+
+    public void getAllEvents(){
+
+        firebase = new Firebase("https://postboard.firebaseio.com");
+        firebase.addChildEventListener(new ChildEventListener() {
+            @Override
+            public void onChildAdded(DataSnapshot dataSnapshot, String s) {
+                eventList=new ArrayList<>();
+                for (DataSnapshot dataSnapshot1 : dataSnapshot.getChildren()) {
+                    {
+                        //Toast.makeText(MainActivity.this, dataSnapshot1.getRef().getKey().toString(), Toast.LENGTH_SHORT).show();
+                        eventId = dataSnapshot1.getRef().getKey().toString();
+                        eventName = dataSnapshot1.child("eventName").getValue(String.class);
+                        eventDay = dataSnapshot1.child("eventDay").getValue(String.class);
+                        eventTime = dataSnapshot1.child("eventTime").getValue(String.class);
+                        eventPlace = dataSnapshot1.child("eventPlace").getValue(String.class);
+                        eventBy = dataSnapshot1.child("eventBy").getValue(String.class);
+                        eventImage = dataSnapshot1.child("eventImage").getValue(String.class);
+                        //eventId = dataSnapshot1.child("eventId").getValue(String.class);
+                        going = dataSnapshot1.child("going").getValue(String.class);
+                        notGoing = dataSnapshot1.child("notGoing").getValue(String.class);
+                        eventImageList.add(eventImage);
+                        eventList.add(new Event(eventName, eventDay, eventTime, eventPlace, eventBy, eventImage, eventId, going, notGoing));
+                    }
+                }
+                populateListView();
+            }
+
+
+            @Override
+            public void onChildChanged(DataSnapshot dataSnapshot, String s) {
+
+            }
+
+            @Override
+            public void onChildRemoved(DataSnapshot dataSnapshot) {
+
+            }
+
+            @Override
+            public void onChildMoved(DataSnapshot dataSnapshot, String s) {
+
             }
 
             @Override
@@ -71,6 +108,15 @@ public class MainActivity extends AppCompatActivity {
 
             }
         });
+    }
+
+    public void populateListView(){
+        for(Event event:eventList)
+        {
+            adapter=new MyAdapter(MainActivity.this, R.id.imageView1, eventList);
+            listView1.setAdapter(adapter);
+        }
+
     }
 
     @Override
@@ -123,5 +169,10 @@ public class MainActivity extends AppCompatActivity {
         }
         AlertDialog alertDialog=builder.create();
         alertDialog.show();
+    }
+
+    @Override
+    public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+
     }
 }
