@@ -28,7 +28,6 @@ public class Event {
         this.eventId=eventId;
         this.going=going;
         this.notGoing=notGoing;
-
     }
 
     public String getEventName() {

@@ -16,7 +16,6 @@ import java.net.HttpURLConnection;
 import java.net.URL;
 import java.util.List;
 
-
 public class MyAdapter extends ArrayAdapter {
 
     private Context context;

@@ -9,6 +9,7 @@ import android.net.Uri;
 import android.os.Bundle;
 import android.os.StrictMode;
 import android.support.v7.app.AppCompatActivity;
+import android.view.KeyEvent;
 import android.view.View;
 import android.widget.Button;
 import android.widget.DatePicker;
@@ -18,6 +19,7 @@ import android.widget.Spinner;
 import android.widget.TimePicker;
 import android.widget.Toast;
 
+import com.cloudinary.Cloudinary;
 import com.firebase.client.Firebase;
 import com.mobsandgeeks.saripaar.ValidationError;
 import com.mobsandgeeks.saripaar.Validator;
@@ -30,8 +32,6 @@ import java.util.Calendar;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-
-
 
 //import android.util.Base64;
 
@@ -81,8 +81,7 @@ public class AddEventActivity extends AppCompatActivity {
         validator1.validate();
     }
 
-    public void init()
-    {
+    public void init() {
         eventList=new ArrayList<Event>();
         firebase = new Firebase("https://postboard.firebaseio.com/");
         editText1=(EditText)findViewById(R.id.editText1);
@@ -95,13 +94,10 @@ public class AddEventActivity extends AppCompatActivity {
         validator1=new Validator(AddEventActivity.this);
         setDatePickerDialog();
         setTimePickerDialog();
-
     }
 
     public void setValidator()
     {
-
-
         validator1.setValidationListener(new Validator.ValidationListener() {
             @Override
             public void onValidationSucceeded() {
@@ -122,23 +118,20 @@ public class AddEventActivity extends AppCompatActivity {
                 config.put("cloud_name", "sinhadevang");
                 config.put("api_key", "948898223435896");
                 config.put("api_secret", "5JbeTSBbhtpwSNfzx_BZMVYyn4E");
-                Cloudinary cloudinary= new Cloudinary;
+                Cloudinary cloudinary = new Cloudinary(config);
                 try {
                     Map uploadResult=cloudinary.uploader().upload(byteArrayInputStream, config);
-                    String eventImage=uploadResult.get("url").toString();//this gets the url from cloudinary
+                    String eventImage=uploadResult.get("url").toString();
                     Event event=new Event(eventName, eventDay, eventTime, eventPlace, eventBy, eventImage, String.valueOf(Math.random()*1000000).replace(".", ""), "0", "0");
-                    firebase.child("Events").push().setValue(event);// this will push the data to firebase
+                    firebase.child("Events").push().setValue(event);
                     Toast.makeText(AddEventActivity.this, "Event Added", Toast.LENGTH_SHORT).show();
                     Intent intent=new Intent(AddEventActivity.this, MainActivity.class);
                     startActivity(intent);
                     finish();
-
                 }
                 catch(Exception e)
                 {
                 }
-
-
             }
 
             @Override
@@ -228,5 +221,17 @@ public class AddEventActivity extends AppCompatActivity {
         Uri selectedImage = data.getData();
         imageView1.setImageURI(selectedImage);
         imageView1.setVisibility(View.VISIBLE);
+    }
+
+    @Override
+    public boolean onKeyDown(int keyCode, KeyEvent event)  {
+        if (keyCode == KeyEvent.KEYCODE_BACK && event.getRepeatCount() == 0) {
+            // do something on back
+            Intent intent=new Intent(AddEventActivity.this, MainActivity.class);
+            startActivity(intent);
+            return true;
+        }
+
+        return super.onKeyDown(keyCode, event);
     }
 }
