@@ -70,8 +70,8 @@ public class ViewEventDetails extends AppCompatActivity {
         eventDay=getIntent().getStringExtra("eventDay");
         eventTime=getIntent().getStringExtra("eventTime");
         eventPlace=getIntent().getStringExtra("eventPlace");
-        eventBy=getIntent().getStringExtra("eventBy");
-        eventImage=getIntent().getStringExtra("eventImage");
+        //eventBy=getIntent().getStringExtra("eventBy");
+        evoentImage=getIntent().getStringExtra("eventImage");
         eventId=getIntent().getStringExtra("eventId");
         going=getIntent().getStringExtra("going");
         notGoing=getIntent().getStringExtra("notGoing");
